@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+#define ROWS 3
+#define COLS 4
+
+int calculateRowMajor(int array[ROWS][COLS], int row, int col) {
+    int elementSize = sizeof(array[0][0]); // Size of each element in bytes
+    int numberOfCols = COLS; // Number of columns in the array
+    int baseAddress = (int)&array[0][0]; // Base memory address of the array
+
+    int memoryLocation = baseAddress + ((row * numberOfCols + col) * elementSize);
+    return memoryLocation;
+}
+
+int main() {
+    int array[ROWS][COLS];
+
+    // Initialize the array with some values
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            array[i][j] = i * COLS + j;
+        }
+    }
+
+    // Calculate the memory location of each element and print
+    printf("Memory locations in row-major order:\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            int memoryLocation = calculateRowMajor(array, i, j);
+            printf("array[%d][%d] = %d\tMemory Location: %d\n", i, j, array[i][j], memoryLocation);
+        }
+    }
+
+    return 0;
+}
