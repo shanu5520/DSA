@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int arr[5];
+    int i;
+
+    printf("Enter 5 integers:\n");
+
+    // Read input from user using scanf
+    for (i = 0; i < 5; i++) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    // Print the array
+    printf("You entered:\n");
+    for (i = 0; i < 5; i++) {
+        printf("\n %d %d ", arr[i],&arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
