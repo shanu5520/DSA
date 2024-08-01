@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    // Declare and initialize a 1D array
+    int scores[5] = {10, 20, 30, 40, 50};
+
+    // Print the elements of the array
+    printf("Elements of the array:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("scores[%d] = %d\n", i, scores[i]);
+    }
+
+    // Access and modify an element of the array
+    scores[2] = 35;
+    printf("Modified element: scores[2] = %d\n", scores[2]);
+
+    // Calculate the sum of the elements of the array
+    int sum = 0;
+    for (int i = 0; i < 5; i++) {
+        sum += scores[i];
+    }
+    printf("Sum of the elements: %d\n", sum);
+
+    return 0;
+}
