@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE 5
+
+int main() {
+    int matrix[SIZE][SIZE];
+
+    // Initialize the upper triangular matrix
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            if (i <= j) {
+                matrix[i][j] = i + j + 1; // upper triangular elements
+            } else {
+                matrix[i][j] = 0; // lower triangular elements
+            }
+        }
+    }
+
+    // Print the upper triangular matrix
+    printf("Upper Triangular Matrix:\n");
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            printf("%5d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
